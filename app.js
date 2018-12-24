@@ -8,7 +8,11 @@ app.get("/",function(req, res) {
 });
 
 app.get("/results",function(req,res){
-   request("http://www.omdbapi.com/?s=spiderman&apikey=thewdb ",function(error,response,body){
+    var query = req.query.search;
+    var url1 = "http://www.omdbapi.com/?s=";
+    var url2 = "&apikey=thewdb"
+    var searchUrl = url1 + query + url2;
+   request(searchUrl,function(error,response,body){
       if(!error && response.statusCode == 200){
           var data = JSON.parse(body);
           //res.send(results["Search"][0]);
