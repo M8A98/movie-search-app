@@ -1,6 +1,11 @@
-<h1>Here are 10 movies:</h1>
+<h1>Here is the list</h1>
 
 <% data["Search"].forEach(function(movie){%>
+
+<% if(!data["Search"]){%>
+    <% res.redirect("/")%>
+<%}%>
+
 <ul>
     <li>
         <strong>
