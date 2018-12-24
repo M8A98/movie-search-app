@@ -16,7 +16,7 @@ app.get("/results",function(req,res){
       if(!error && response.statusCode == 200){
           var data = JSON.parse(body);
           //res.send(results["Search"][0]);
-          res.render("results",{data : data});
+          res.render("results",{data : data.Search});
       } 
    });
 });
